@@ -7,20 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Bienvenue sur le Forum</h1>
-        <nav>
-            <ul>
-                <li><a href="login.html">Connexion</a></li>
-                <li><a href="register.html">Inscription</a></li>
-            </ul>
+     <header>
+        <h2 class="Forum">Forum</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <button id="btn-login" class="btnlogin-popup">Login</button>
         </nav>
-    </header>
-    <main>
-        <!-- Contenu principal de la page d'accueil -->
-    </main>
-    <footer>
-        <p>© 2024 Forum. Tous droits réservés.</p>
-    </footer>
+    </header>   
+    
+    
+
+    <script>
+        document.getElementById("btn-login").addEventListener("click", function() {
+            window.location.href = "login.html";
+        });
+    </script>
+    
 </body>
 </html>
