@@ -4,24 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catégories</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Catégories</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="login.html">Connexion</a></li>
-                <!-- Ajoutez ici d'autres liens de navigation -->
-            </ul>
+        <div class="Forum">Forum</div>
+        <nav class="navigation">
+            <a href="index.html">Accueil</a>
+            <a href="categories.html">Catégories</a>
+            <button class="btnlogin-popup">Connexion</button>
         </nav>
     </header>
     <main>
-        <!-- Liste de toutes les catégories -->
+        <div class="wrapper">
+            <h1>Catégories</h1>
+            <div class="card-container">
+                <div class="card">
+                    <a href="categorie1.html">
+                        <div class="card-content">
+                            <h2>Catégorie 1</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="categorie2.html">
+                        <div class="card-content">
+                            <h2>Catégorie 2</h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="categorie3.html">
+                        <div class="card-content">
+                            <h2>Catégorie 3</h2>
+                        </div>
+                    </a>
+                </div>
+                <!-- Ajouter d'autres catégories ici -->
+            </div>
+        </div>
     </main>
-    <footer>
-        <p>© 2024 Forum. Tous droits réservés.</p>
-    </footer>
 </body>
 </html>
