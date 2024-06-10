@@ -3,46 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catégories</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Toutes les catégories</title>
+    <link rel="stylesheet" href="style.css">        
 </head>
 <body>
     <header>
-        <div class="Forum">Forum</div>
+        <h2 class="Forum">Anime</h2>
         <nav class="navigation">
-            <a href="index.html">Accueil</a>
-            <a href="categories.html">Catégories</a>
-            <button class="btnlogin-popup">Connexion</button>
+            <a href="index.html">Home</a>
+            <a href="categories.html">Categories</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <button id="btn-login" class="btnlogin-popup">Login</button>
         </nav>
     </header>
-    <main>
-        <div class="wrapper">
-            <h1>Catégories</h1>
-            <div class="card-container">
-                <div class="card">
-                    <a href="categorie1.html">
-                        <div class="card-content">
-                            <h2>Catégorie 1</h2>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="categorie2.html">
-                        <div class="card-content">
-                            <h2>Catégorie 2</h2>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="categorie3.html">
-                        <div class="card-content">
-                            <h2>Catégorie 3</h2>
-                        </div>
-                    </a>
-                </div>
-                <!-- Ajouter d'autres catégories ici -->
+    <section class="header-image">
+        <img src="nav.jpg" alt="Header image">
+    </section>
+    <div class="categories">
+        <div class="category-card">
+            <h2>Action</h2>
+            <div class="categories">
+                <img src="cat1.jpg" alt="Categorie">
             </div>
+            <button>Voir les publications</button>
         </div>
-    </main>
+        <div class="category-card">
+            <h2>Horreur</h2>
+            <div class="categories">
+                <img src="cat3.jpg" alt="Categorie">
+            </div>
+            <button>Voir les publications</button>
+        </div>
+        <div class="category-card">
+            <h2>Comedie</h2>
+            <div class="categories">
+                <img src="cat4.jpg" alt="Categorie">
+            </div>
+            <button>Voir les publications</button>
+        </div>
+        <div class="category-card">
+            <h2>Romantique</h2>
+            <div class="categories">
+                <img src="cat6.jpg" alt="Categorie">
+            </div>
+            <button>Voir les publications</button>
+        </div>
+        <div class="category-card">
+            <h2>Sports</h2>
+            <div class="categories">
+                <img src="cat7.jpg" alt="Categorie">
+            </div>
+            <button>Voir les publications</button>
+        </div>
+        <!-- Ajouter d'autres catégories ici -->
+    </div>
 </body>
 </html>
