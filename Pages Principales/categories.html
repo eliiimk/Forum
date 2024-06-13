@@ -28,45 +28,49 @@
             <div class="categories">
                 <img src="cat1.jpg" alt="Categorie">
             </div>
-            <button class="btn-publications">Voir les publications</button>
+            <button class="btn-publications" data-url="action.html">Voir les publications</button>
         </div>
         <div class="category-card">
             <h2>Horreur</h2>
             <div class="categories">
                 <img src="cat3.jpg" alt="Categorie">
             </div>
-            <button class="btn-publications">Voir les publications</button>
+            <button class="btn-publications" data-url="horreur.html">Voir les publications</button>
         </div>
         <div class="category-card">
             <h2>Comedie</h2>
             <div class="categories">
                 <img src="cat4.jpg" alt="Categorie">
             </div>
-            <button class="btn-publications">Voir les publications</button>
+            <button class="btn-publications" data-url="comedie.html">Voir les publications</button>
         </div>
         <div class="category-card">
             <h2>Romantique</h2>
             <div class="categories">
                 <img src="cat6.jpg" alt="Categorie">
             </div>
-            <button class="btn-publications">Voir les publications</button>
+            <button class="btn-publications" data-url="romantique.html">Voir les publications</button>
         </div>
         <div class="category-card">
             <h2>Sports</h2>
             <div class="categories">
                 <img src="cat7.jpg" alt="Categorie">
             </div>
-            <button class="btn-publications">Voir les publications</button>
+            <button class="btn-publications" data-url="sports.html">Voir les publications</button>
         </div>
         <!-- Ajouter d'autres catégories ici -->
     </div>
     <script>
+        // Gestionnaire pour le bouton de login
         document.getElementById("btn-login").addEventListener("click", function() {
             window.location.href = "login.html";
         });
+
+        // Ajouter des gestionnaires pour tous les boutons "Voir les publications"
         document.querySelectorAll(".btn-publications").forEach(button => {
             button.addEventListener("click", function() {
-                window.location.href = "categoryA.html";
+                const url = button.getAttribute("data-url");
+                window.location.href = url;
             });
         });
     </script>
