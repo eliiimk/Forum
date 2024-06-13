@@ -17,46 +17,58 @@
             <button id="btn-login" class="btnlogin-popup">Login</button>
         </nav>
     </header>
+
     <section class="header-image">
-        <img src="nav.jpg" alt="Header image">
+        <div class="rectangle"></div>
     </section>
+    
     <div class="categories">
         <div class="category-card">
             <h2>Action</h2>
             <div class="categories">
                 <img src="cat1.jpg" alt="Categorie">
             </div>
-            <button>Voir les publications</button>
+            <button class="btn-publications">Voir les publications</button>
         </div>
         <div class="category-card">
             <h2>Horreur</h2>
             <div class="categories">
                 <img src="cat3.jpg" alt="Categorie">
             </div>
-            <button>Voir les publications</button>
+            <button class="btn-publications">Voir les publications</button>
         </div>
         <div class="category-card">
             <h2>Comedie</h2>
             <div class="categories">
                 <img src="cat4.jpg" alt="Categorie">
             </div>
-            <button>Voir les publications</button>
+            <button class="btn-publications">Voir les publications</button>
         </div>
         <div class="category-card">
             <h2>Romantique</h2>
             <div class="categories">
                 <img src="cat6.jpg" alt="Categorie">
             </div>
-            <button>Voir les publications</button>
+            <button class="btn-publications">Voir les publications</button>
         </div>
         <div class="category-card">
             <h2>Sports</h2>
             <div class="categories">
                 <img src="cat7.jpg" alt="Categorie">
             </div>
-            <button>Voir les publications</button>
+            <button class="btn-publications">Voir les publications</button>
         </div>
         <!-- Ajouter d'autres catégories ici -->
     </div>
+    <script>
+        document.getElementById("btn-login").addEventListener("click", function() {
+            window.location.href = "login.html";
+        });
+        document.querySelectorAll(".btn-publications").forEach(button => {
+            button.addEventListener("click", function() {
+                window.location.href = "categoryA.html";
+            });
+        });
+    </script>
 </body>
 </html>

@@ -98,11 +98,17 @@ header {
     z-index: -1;
 }
 
-.header-image img {
+.header-image .rectangle {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 50px; /* Ajustez cette hauteur selon la hauteur de votre navbar */
+    background-color: rgba(0, 94, 255, 0.5); /* Couleur du rectangle avec opacité */
+    filter: blur(10px); /* Applique un effet de flou */
+    position: absolute; /* Positionnement pour s'assurer que le rectangle est en haut de la section */
+    top: 0; /* Aligne le rectangle en haut de la section */
+    border: 3px solid rgba(255, 255, 255, .2);
+    padding: 20px 45px 20px;
 }
+
 
 /* Publication */
 .logo {
