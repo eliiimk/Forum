@@ -12,7 +12,7 @@
         <nav class="navigation">
             <a href="index.html">Home</a>
             <a href="categories.html">Categories</a>
-            <a href="/Pages de création/message.html">Postuler</a>
+            <a href="/Pagesdecréation/message.html">Postuler</a>
             <a href="#">Contact</a>
             <button id="btn-login" class="btnlogin-popup">Login</button>
         </nav>
@@ -65,11 +65,9 @@
     </div>
 
     <script>
-      
         document.getElementById("btn-login").addEventListener("click", function() {
             window.location.href = "login.html";
         });
-
       
         document.querySelectorAll(".btn-publications").forEach(button => {
             button.addEventListener("click", function() {
@@ -79,7 +77,8 @@
         });
 
         document.getElementById("new-category-button").addEventListener("click", function() {
-            window.location.href = "Pages de création/category.html"; 
+            const url = encodeURI("Pagesdecréation/category.html");
+            window.location.href = url;
         });
     </script>
 </body>
