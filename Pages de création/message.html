@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum - Accueil</title>
+    <link rel="stylesheet" href="/Pages Principales/style.css">
+</head>
+<body>
+    <header>
+        <h2 class="Forum">Anime</h2>
+        <nav class="navigation">
+            <a href="/Pages Principales/index.html">Home</a>
+            <a href="/Pages Principales/categories.html">Categories</a>
+            <a href="message.html">Postuler</a>
+            <a href="#">Contact</a>
+            <button id="btn-login" class="btnlogin-popup">Login</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>Postuler une Photo</h2>
+            <form id="uploadForm">
+                <input type="file" id="fileInput" name="file" accept="image/*">
+                <button type="submit">Télécharger</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("uploadForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const fileInput = document.getElementById("fileInput");
+            if (fileInput.files.length > 0) {
+                alert("Fichier téléchargé avec succès : " + fileInput.files[0].name);
+               
+            } else {
+                alert("Veuillez sélectionner un fichier à télécharger.");
+            }
+        });
+    </script>
+</body>
+</html>

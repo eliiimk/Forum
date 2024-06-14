@@ -12,7 +12,7 @@
         <nav class="navigation">
             <a href="index.html">Home</a>
             <a href="categories.html">Categories</a>
-            <a href="#">Services</a>
+            <a href="/Pages de création/message.html">Postuler</a>
             <a href="#">Contact</a>
             <button id="btn-login" class="btnlogin-popup">Login</button>
         </nav>
@@ -58,20 +58,28 @@
             </div>
             <button class="btn-publications" data-url="sports.html">Voir les publications</button>
         </div>
-        <!-- Ajouter d'autres catégories ici -->
+
     </div>
+    <div class="button-container">
+        <button id="new-category-button">Créer une nouvelle catégorie</button>
+    </div>
+
     <script>
-        // Gestionnaire pour le bouton de login
+      
         document.getElementById("btn-login").addEventListener("click", function() {
             window.location.href = "login.html";
         });
 
-        // Ajouter des gestionnaires pour tous les boutons "Voir les publications"
+      
         document.querySelectorAll(".btn-publications").forEach(button => {
             button.addEventListener("click", function() {
                 const url = button.getAttribute("data-url");
                 window.location.href = url;
             });
+        });
+
+        document.getElementById("new-category-button").addEventListener("click", function() {
+            window.location.href = "Pages de création/category.html"; 
         });
     </script>
 </body>
