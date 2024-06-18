@@ -130,31 +130,6 @@ header {
     display: block;
 }
 
-
-
-.header-image {
-    width: 100%;
-    height: 300px; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    top: 100px; 
-    z-index: -1;
-}
-
-.header-image .rectangle {
-    width: 100%;
-    height: 50px; 
-    background-color: rgba(0, 94, 255, 0.5); 
-    filter: blur(10px); 
-    position: absolute; 
-    top: 0; 
-    border: 3px solid rgba(255, 255, 255, .2);
-    padding: 20px 45px 20px;
-}
-
-
 /* Publication */
 .logo {
 	display: flex;
