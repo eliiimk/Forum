@@ -6,11 +6,32 @@ import (
     "log"
     "net/http"
 
+    _ "github.com/mattn/go-sqlite3"
     "github.com/google/uuid"
     "golang.org/x/crypto/bcrypt"
-
-    "Forum/backend/db" // import db package
 )
+
+var db *sql.DB
+
+func initDB() {
+    var err error
+    db, err = sql.Open("sqlite3", "./user_auth.db")
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    createTable := `CREATE TABLE IF NOT EXISTS users (
+        id TEXT PRIMARY KEY,
+        username TEXT NOT NULL UNIQUE,
+        password TEXT NOT NULL,
+        email TEXT NOT NULL
+    );`
+
+    _, err = db.Exec(createTable)
+    if err != nil {
+        log.Fatal(err)
+    }
+}
 
 func hashPassword(password string) (string, error) {
     bytes, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
@@ -23,7 +44,7 @@ func checkPasswordHash(password, hash string) bool {
 }
 
 func signupHandler(w http.ResponseWriter, r *http.Request) {
-    if r.Method!= http.MethodPost {
+    if r.Method != http.MethodPost {
         http.Error(w, "Invalid request method", http.StatusMethodNotAllowed)
         return
     }
@@ -33,23 +54,23 @@ func signupHandler(w http.ResponseWriter, r *http.Request) {
     password := r.FormValue("password")
 
     hashedPassword, err := hashPassword(password)
-    if err!= nil {
+    if err != nil {
         http.Error(w, "Server error", http.StatusInternalServerError)
         return
     }
 
     id := uuid.New().String()
-    _, err = db.db.Exec("INSERT INTO users (id, username, password, email) VALUES (?,?,?,?)", id, username, hashedPassword, email)
-    if err!= nil {
+    _, err = db.Exec("INSERT INTO users (id, username, password, email) VALUES (?, ?, ?, ?)", id, username, hashedPassword, email)
+    if err != nil {
         http.Error(w, "Server error", http.StatusInternalServerError)
         return
     }
 
-    http.Redirect(w, r, "/login", http.StatusFound)
+    fmt.Fprintf(w, "User registered successfully!")
 }
 
 func loginHandler(w http.ResponseWriter, r *http.Request) {
-    if r.Method!= http.MethodPost {
+    if r.Method != http.MethodPost {
         http.Error(w, "Invalid request method", http.StatusMethodNotAllowed)
         return
     }
@@ -58,8 +79,8 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
     password := r.FormValue("password")
 
     var hashedPassword string
-    err := db.db.QueryRow("SELECT password FROM users WHERE username =?", username).Scan(&hashedPassword)
-    if err!= nil {
+    err := db.QueryRow("SELECT password FROM users WHERE username = ?", username).Scan(&hashedPassword)
+    if err != nil {
         if err == sql.ErrNoRows {
             http.Error(w, "Invalid username or password", http.StatusUnauthorized)
         } else {
@@ -68,19 +89,19 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    if!checkPasswordHash(password, hashedPassword) {
+    if !checkPasswordHash(password, hashedPassword) {
         http.Error(w, "Invalid username or password", http.StatusUnauthorized)
         return
     }
 
-    http.Redirect(w, r, "/welcome", http.StatusFound)
+    fmt.Fprintf(w, "Login successful!")
 }
 
 func main() {
-    db.initDB()
-    defer db.db.Close()
+    initDB()
+    defer db.Close()
 
-    fs := http.FileServer(http.Dir("."))
+    fs := http.FileServer(http.Dir("./Pages Principales"))
     http.Handle("/", fs)
 
     http.HandleFunc("/signup", signupHandler)
