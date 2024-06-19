@@ -7,25 +7,44 @@
     <link rel="stylesheet" href="/Pages Principales/style.css">
 </head>
 <body>
+    <!-- Corps du document -->
     <header>
+        <!-- En-tête de la page -->
         <h2 class="Forum">Anime</h2>
+        <!-- Titre du forum -->
         <nav class="navigation">
+            <!-- Menu de navigation -->
             <a href="/Pages Principales/index.html">Home</a>
+            <!-- Lien vers la page d'accueil -->
             <a href="/Pages Principales/categories.html">Categories</a>
+            <!-- Lien vers la page des catégories -->
             <a href="message.html">Postuler</a>
+            <!-- Lien vers la page de postulation -->
             <a href="/Pages utilisateur/profil.html">Profil</a>
+            <!-- Lien vers la page de profil -->
             <button id="btn-login" class="btnlogin-popup">Login</button>
+            <!-- Bouton de connexion -->
         </nav>
     </header>
 
     <main>
+        <!-- Contenu principal de la page -->
         <div class="card">
+            <!-- Carte pour créer une catégorie -->
             <h2>Créer une Catégorie</h2>
+            <!-- Titre de la carte -->
             <form>
+                <!-- Formulaire pour créer une catégorie -->
                 <label for="category-name">Nom de la catégorie:</label>
+                <!-- Étiquette pour le champ de saisie du nom de la catégorie -->
                 <input type="text" id="category-name" name="category-name" required>
+                <!-- Champ de saisie pour le nom de la catégorie -->
+                <input type="file" id="fileInput" name="file" accept="image/*">
+                <!-- Champ de saisie pour le fichier d'image -->
                 <button type="submit">Créer</button>
+                <!-- Bouton de soumission du formulaire -->
             </form>
+            
         </div>
     </main>
 </body>

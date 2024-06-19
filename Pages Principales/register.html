@@ -8,25 +8,37 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <!-- Corps du document -->
     <div class="wrapper R">
+         <!-- Conteneur principal de la page -->
         <form action="/signup" method="POST">
+            <!-- Formulaire d'inscription -->
             <h1>Inscription</h1>
+            <!-- Titre du formulaire -->
             <div class="input-box">
+                <!-- Boîte de saisie pour le nom d'utilisateur -->
                 <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+                <!-- Champ de saisie pour le nom d'utilisateur -->
                 <i class='bx bxs-user'></i>
+                <!-- Icône de Boxicons pour le nom d'utilisateur -->
             </div>
             <div class="input-box">
+                <!-- Boîte de saisie pour l'email -->
                 <input type="text" name="email" placeholder="Email" required>
+                <!-- Champ de saisie pour le mot de passe -->
                 <i class='bx bxs-envelope'></i>
+                <!-- Icône de Boxicons pour le mot de passe -->
             </div>
             <div class="input-box">
                 <input type="password" name="password" placeholder="Mot de passe" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="remember-forget">
+                <!-- Case à cocher pour accepter les termes et conditions -->
                 <label><input type="checkbox"> J'accepte les termes et conditions</label>
             </div>
             <button type="submit" class="btn">S'inscrire</button>
+            <!-- Bouton de soumission du formulaire -->
         </form>
     </div>
 </body>

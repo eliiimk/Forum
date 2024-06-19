@@ -8,23 +8,38 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <!-- Corps du document -->
     <div class="wrapper">
+        <!-- Conteneur principal de la page -->
         <form action="/login" method="POST">
+            <!-- Formulaire de connexion -->
             <h1>Connexion</h1>
+            <!-- Titre du formulaire -->
             <div class="input-box">
+                <!-- Boîte de saisie pour le nom d'utilisateur -->
                 <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+                <!-- Champ de saisie pour le nom d'utilisateur -->
                 <i class='bx bxs-user'></i>
+                <!-- Icône de l'utilisateur -->
             </div>
             <div class="input-box">
+                <!-- Boîte de saisie pour le mot de passe -->
                 <input type="password" name="password" placeholder="Mot de passe" required>
+                <!-- Champ de saisie pour le mot de passe -->
                 <i class='bx bxs-lock-alt'></i>
+                <!-- Icône du mot de passe -->
             </div>
             <div class="remember-forget">
+                <!-- Boîte de rappel et de mot de passe oublié -->
                 <label><input type="checkbox"> Se souvenir de moi</label>
+                <!-- Case à cocher pour se souvenir du mot de passe -->
                 <a href="#">Mot de passe oublié ?</a>
+                <!-- Lien vers la page de récupération du mot de passe -->
             </div>
             <button type="submit" class="btn">Se connecter</button>
+            <!-- Bouton de connexion -->
             <div class="register-link" id="register-link">
+                <!-- Lien vers la page d'inscription -->
                 <p>Pas de compte ? <a href="register.html">S'inscrire</a></p>
             </div>
         </form>

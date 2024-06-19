@@ -209,6 +209,33 @@ header {
 	margin-right: 5px;
 }
 
+/* Vous pouvez ajouter ceci dans votre fichier style.css */
+.icon-like, .icon-dislike {
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+    user-select: none; /* Empêche la sélection de texte lors du clic */
+    transition: transform 0.2s ease-in-out, stroke 0.2s ease-in-out;
+}
+
+.icon-like svg path, .icon-dislike svg path {
+    stroke: #ccc; /* Couleur initiale des pouces */
+    fill: none;
+}
+
+.icon-like:hover svg path, .icon-dislike:hover svg path {
+    stroke: #007BFF; /* Change la couleur au survol */
+}
+
+.icon-like svg path {
+    transform-origin: center;
+}
+
+.icon-like[data-liked="true"] svg path, .icon-dislike[data-disliked="true"] svg path {
+    stroke: #007BFF; /* Couleur des pouces quand aimés ou désaimés */
+    transform: scale(1.2); /* Agrandissement lors du clic */
+}
+
 
 /* Formulaire de connexion et d'inscription */
 .wrapper {
